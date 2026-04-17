@@ -3,30 +3,38 @@ import { hooks } from "@/data/hooks"
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-full bg-zinc-50 dark:bg-zinc-950">
-      <header className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+    <div className="flex flex-col min-h-full bg-[#0a0a0a] text-[#f5f0eb]">
+      <header className="border-b border-[#2a2a2a]">
+        <div className="mx-auto max-w-6xl px-4 py-5 sm:px-6 lg:px-8 flex items-center justify-between">
+          <span className="text-base font-medium tracking-tight text-[#f5f0eb]">
             hookhub
-          </h1>
-          <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-            A directory of cool open-source Claude Code hooks.
-          </p>
+          </span>
+          <a
+            href="https://github.com/anthropics/claude-code"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-[#8a8a8a] hover:text-[#f5f0eb] transition-colors"
+          >
+            GitHub
+          </a>
         </div>
       </header>
 
-      <section className="bg-gradient-to-b from-zinc-900 to-zinc-800 py-16 text-center">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Supercharge Claude Code
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-medium uppercase tracking-widest text-[#c84b31] mb-6">
+            Claude Code · Open Source
+          </p>
+          <h2 className="text-5xl font-semibold tracking-tight text-[#f5f0eb] sm:text-6xl leading-tight">
+            Hooks for<br />Claude Code
           </h2>
-          <p className="mt-4 text-lg text-zinc-300">
+          <p className="mt-6 text-lg text-[#8a8a8a] leading-relaxed max-w-xl mx-auto">
             Discover and share open-source hooks that extend Claude Code with custom behaviors, automations, and integrations.
           </p>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-10 flex justify-center gap-3">
             <a
               href="#hooks"
-              className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-zinc-900 shadow hover:bg-zinc-100 transition-colors"
+              className="rounded-full bg-[#c84b31] px-6 py-2.5 text-sm font-medium text-white hover:bg-[#b04028] transition-colors"
             >
               Browse Hooks
             </a>
@@ -34,7 +42,7 @@ export default function Home() {
               href="https://github.com/anthropics/claude-code"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-zinc-600 px-6 py-3 text-sm font-semibold text-white hover:border-zinc-400 transition-colors"
+              className="rounded-full border border-[#2a2a2a] px-6 py-2.5 text-sm font-medium text-[#f5f0eb] hover:border-[#444] transition-colors"
             >
               Submit a Hook
             </a>
@@ -46,15 +54,15 @@ export default function Home() {
         <HookGrid hooks={hooks} />
       </main>
 
-      <footer className="border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs text-zinc-500 dark:text-zinc-400">
+      <footer className="border-t border-[#2a2a2a] mt-16">
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+          <p className="text-center text-xs text-[#5a5a5a]">
             Built with Next.js &middot;{" "}
             <a
               href="https://github.com/anthropics/claude-code"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-zinc-700 dark:hover:text-zinc-300"
+              className="hover:text-[#8a8a8a] transition-colors"
             >
               hookhub on GitHub
             </a>
