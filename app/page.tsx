@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero"
+import Hero from "@/components/hero/Hero"
 import HookGrid from "@/components/HookGrid"
 import { hooks } from "@/data/hooks"
 
