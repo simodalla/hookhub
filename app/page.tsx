@@ -1,4 +1,4 @@
-import Hero from "@/components/hero/Hero"
+import Hero4 from "@/components/hero/Hero4"
 import HookGrid from "@/components/HookGrid"
 import { hooks } from "@/data/hooks"
 
@@ -21,7 +21,7 @@ export default function Home() {
         </div>
       </header>
 
-      <Hero />
+      <Hero4 />
 
       <main id="hooks" className="flex-1 mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <HookGrid hooks={hooks} />
