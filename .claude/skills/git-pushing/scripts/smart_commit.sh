@@ -76,28 +76,13 @@ determine_scope() {
 
 # Generate commit message if not provided
 if [ -z "$1" ]; then
-    COMMIT_TYPE=$(determine_commit_type "$STAGED_FILES")
-    SCOPE=$(determine_scope "$STAGED_FILES")
+    DIFF_CONTENT=$(git diff --cached)
+    info "Asking Claude to generate a pirate commit message..."
+    COMMIT_MSG=$(claude -p "You are a pirate. Generate a conventional commit message (type(scope): description) for the following git diff. The description must be written in pirate speak. Output ONLY the commit message line, nothing else.\n\nStaged files:\n${STAGED_FILES}\n\nDiff:\n${DIFF_CONTENT}" 2>/dev/null)
 
-    # Count files changed
-    NUM_FILES=$(echo "$STAGED_FILES" | wc -l | xargs)
-
-    # Generate description based on changes
-    if [ "$COMMIT_TYPE" = "docs" ]; then
-        DESCRIPTION="update documentation"
-    elif [ "$COMMIT_TYPE" = "test" ]; then
-        DESCRIPTION="update tests"
-    elif [ "$COMMIT_TYPE" = "chore" ]; then
-        DESCRIPTION="update dependencies"
-    else
-        DESCRIPTION="update $NUM_FILES file(s)"
-    fi
-
-    # Build commit message
-    if [ -n "$SCOPE" ]; then
-        COMMIT_MSG="${COMMIT_TYPE}(${SCOPE}): ${DESCRIPTION}"
-    else
-        COMMIT_MSG="${COMMIT_TYPE}: ${DESCRIPTION}"
+    if [ -z "$COMMIT_MSG" ]; then
+        error "Claude CLI failed to generate a commit message"
+        exit 1
     fi
 
     info "Generated commit message: $COMMIT_MSG"
