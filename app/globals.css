@@ -24,3 +24,23 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes hero-orb-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(2.5rem, 3rem) scale(1.06); }
+  66% { transform: translate(-1rem, 1.5rem) scale(0.97); }
+}
+
+@keyframes hero-orb-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-3rem, -2rem) scale(0.94); }
+  66% { transform: translate(1.5rem, 3.5rem) scale(1.04); }
+}
+
+.animate-hero-orb-1 {
+  animation: hero-orb-1 18s ease-in-out infinite;
+}
+
+.animate-hero-orb-2 {
+  animation: hero-orb-2 24s ease-in-out infinite 4s;
+}
