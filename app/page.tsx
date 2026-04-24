@@ -27,7 +27,8 @@ export default function Home() {
               href="https://github.com/anthropics/claude-code"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-zinc-700 dark:hover:text-zinc-300"
+              aria-label="View hookhub on GitHub"
+              className="underline hover:text-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:hover:text-zinc-300 dark:focus-visible:ring-zinc-100"
             >
               hookhub on GitHub
             </a>
