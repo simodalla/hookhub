@@ -1,4 +1,5 @@
 import HookGrid from "@/components/HookGrid"
+import Hero from "@/components/Hero"
 import { hooks } from "@/data/hooks"
 
 export default function Home() {
