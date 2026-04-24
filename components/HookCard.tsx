@@ -2,6 +2,7 @@ import type { Hook } from "@/types/hook"
 
 type HookCardProps = {
   hook: Hook
+  index?: number
 }
 
 const categoryColors: Record<string, string> = {
@@ -20,7 +21,7 @@ const categoryColors: Record<string, string> = {
     "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300",
 }
 
-const HookCard = ({ hook }: HookCardProps) => {
+const HookCard = ({ hook, index = 0 }: HookCardProps) => {
   const badgeClass =
     categoryColors[hook.category] ??
     "bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
@@ -31,7 +32,8 @@ const HookCard = ({ hook }: HookCardProps) => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`View ${hook.name} on GitHub`}
-      className="group flex flex-col gap-3 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:shadow-zinc-800 dark:focus-visible:ring-zinc-100"
+      className="animate-slide-up group flex flex-col gap-3 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:shadow-zinc-800/60 dark:focus-visible:ring-zinc-100"
+      style={{ animationDelay: `${index * 40}ms` }}
     >
       <div className="flex items-start justify-between gap-3">
         <span className="font-semibold text-zinc-900 dark:text-zinc-50 leading-snug">
