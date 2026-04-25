@@ -36,7 +36,7 @@ const HookCard = ({ hook, index = 0 }: HookCardProps) => {
       style={{ animationDelay: `${index * 40}ms` }}
     >
       <div className="flex items-start justify-between gap-3">
-        <span className="font-semibold text-zinc-900 dark:text-zinc-50 leading-snug">
+        <span className="font-semibold italic text-zinc-900 dark:text-zinc-50 leading-snug">
           {hook.name}
         </span>
         <span
