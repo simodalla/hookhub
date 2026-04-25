@@ -1,5 +1,6 @@
 import HookGrid from "@/components/HookGrid"
 import Hero from "@/components/Hero"
+import Footer from "@/components/Footer"
 import { hooks } from "@/data/hooks"
 
 export default function Home() {
@@ -20,22 +21,7 @@ export default function Home() {
         <HookGrid hooks={hooks} />
       </main>
 
-      <footer className="border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs text-zinc-500 dark:text-zinc-400">
-            Built with Next.js &middot;{" "}
-            <a
-              href="https://github.com/anthropics/claude-code"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View hookhub on GitHub"
-              className="underline hover:text-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:hover:text-zinc-300 dark:focus-visible:ring-zinc-100"
-            >
-              hookhub on GitHub
-            </a>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
